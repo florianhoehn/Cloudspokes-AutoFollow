@@ -1,0 +1,10 @@
+# Cloudspokes - Auto-Follow
+
+Prerequisite: Turn on Sales Teams and Account Teams on in the environment. Then run the ant bean 'deploy' to deploy all code to this environment running all tests in that process.
+
+Description: The code is written as clean and self-explanatory as possible to ensure the ease of reading, understanding and using it. It has been written using TDD and therefore naturally emphasizes the unit tests.
+
+I have decided to go with the trigger approach since users usually prefer to be able to automatically start the process themselves. Additionally to the triggers (on after_update) on the Account and Opportunity object, I have created a trigger on the FeedItem so that a new Chatter Post will trigger the auto following as well. This way the user has full control over triggering the process in an urgent case or can settle for the automaic following to take place whenever there is an actual change made. 
+
+The actual functionality of auto-following is implemented in the 'SmartEntitySubscription' class. This class is instantiated by a set of recordIds to get the existing EntitySubscriptions.
+It has an 'add' function to add new Subscriptions. This includes a check if these are already existing and a 'insert' function to insert all new Subscriptions.
