@@ -2,6 +2,7 @@
 
 Prerequisite: 
 Turn on Sales Teams and Account Teams on in the environment. 
+Edit the 'build.properties' file to hold the correct username, password and security token.
 Then run the ant bean 'deploy' to deploy all code to this environment running all tests in that process.
 
 Description: 
